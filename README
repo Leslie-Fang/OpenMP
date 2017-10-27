@@ -1,0 +1,8 @@
+openmp 与 mpi的区别(http://blog.csdn.net/xingkongfenqi/article/details/50541948)
+
+基本区别在于：
+openmp适合用在单机多核多线(进)程，不能用在cluster上面
+mpi适合用在cluster上,也可以用在单机多线程但效率没有openmp高
+
+mpi是一种标准，有多种实现(mpich,intelmpi,openmpi)
+**openmpi和openmp是完全两回事**
