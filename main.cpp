@@ -1,7 +1,10 @@
 //
 // Created by leslie-fang on 2017/10/27.
 //
-#include "omp.h"
+#ifdef _OPENMP
+    #include "omp.h"
+#endif
+
 #include <iostream>
 
 using namespace std;
@@ -17,8 +20,13 @@ int main(int argc, char **argv){
 }
 
 void hello(void){
-    int thread_nums = omp_get_num_threads();
-    int thread_rank = omp_get_thread_num();
+    #ifdef _OPENMP
+        int thread_nums = omp_get_num_threads();
+        int thread_rank = omp_get_thread_num();
+    #else
+        int thread_nums = 1;
+        int thread_rank = 0;
+    #endif
     cout<<"In "<<thread_rank<<" out of: "<<thread_nums<<" hhh"<<endl;
     return;
 }
