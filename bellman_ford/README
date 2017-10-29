@@ -1,0 +1,23 @@
+
+串行版本：
+编译：
+g++ -std=c++11 -o serial_bellman_ford serial_bellman_ford.cpp
+
+运行：
+./serial_bellman_ford input2.txt
+Time(s): 0.653579
+
+
+OpenMP版本
+编译：
+g++ -std=c++11 -fopenmp -o openmp_bellman_ford openmp_bellman_ford.cpp
+
+运行：
+./openmp_bellman_ford input2.txt 4
+Time(s): 0.321754
+
+./openmp_bellman_ford input2.txt 16
+Time(s): 0.118478
+
+./openmp_bellman_ford input2.txt 80
+Time(s): 0.044866
